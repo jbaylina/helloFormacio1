@@ -1,7 +1,36 @@
-<html>
+<html ng-app="m">
 <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"></link>
+        <link rel="stylesheet" href="css/hello.css"></link>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
+
+<script src="js/modul1.js"></script>
 </head>
 <body>
-<h1> Clients </h1>
+
+<div ng-controller="MainController" class="container">
+    <h1 class="titol"> Clients </h1>
+    <button class="btn btn-primary" ng-click="loadData()">Load Data </button>
+    <div ng-repeat="c in clients">
+        <span>{{c.firstName}}</span>
+        <span>{{c.lastName}}</span>
+        <ul>
+            <li ng-repeat="t in c.telfs">
+                    {{t.number}} ({{t.type}})
+            </li>
+        <ul>
+    </div>
+    <input type="string" ng-model="var1">
+    <input type="string" ng-model="var2">
+    <span> {{suma(var1, var2)}}
+</div>
 </body>
 </html>
